@@ -25,7 +25,7 @@
 ![Victory Landing](Screenshot3.PNG)
 
 ## How to Play
-1. Open [Space Rescue on Scratch](https://scratch.mit.edu/projects/1242167044/)
+1. Open [Space Rescue on Scratch](https://scratch.mit.edu/projects/1243348348/)
 2. **Full Screen** recommended (F11).
 3. Click the **green flag** to start!
 4. Use **arrow keys** to fly, **F/D** to shoot.
@@ -64,4 +64,5 @@
 
 **CS50x PSet 0 Complete!**  
 *From Scratch to AI — my CS50x coding journey begins 🚀*
+
 
