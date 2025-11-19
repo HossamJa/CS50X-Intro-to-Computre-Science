@@ -1,4 +1,3 @@
-<xaiArtifact artifact_id="scratch-ps0-readme" artifact_version_id="v1" title="README.md" contentType="text/markdown">
 # CS50x Problem Set 0: Scratch - Space Rescue
 
 ## Overview
@@ -21,14 +20,12 @@
 - **Win Condition**: Rescue 20 passengers + safe landing.
 
 ## Screenshots
-![Space Rescue Gameplay](screenshot1.PNG)
-![Rescuing Passengers](screenshot2.PNG)
-![Victory Landing](screenshot3.PNG)
-
-*(Add your Scratch screenshots here!)*
+![Space Rescue Gameplay](Screenshot1.PNG)
+![Rescuing Passengers](Screenshot2.PNG)
+![Victory Landing](Screenshot3.PNG)
 
 ## How to Play
-1. Open [Space Rescue on Scratch](https://scratch.mit.edu/projects/1242167044/)
+1. Open [Space Rescue on Scratch](https://scratch.mit.edu/projects/1243348348/)
 2. **Full Screen** recommended (F11).
 3. Click the **green flag** to start!
 4. Use **arrow keys** to fly, **F/D** to shoot.
@@ -66,4 +63,6 @@
 ---
 
 **CS50x PSet 0 Complete!**  
-*From Scratch to AI — my coding journey begins 🚀*
+*From Scratch to AI — my CS50x coding journey begins 🚀*
+
+
