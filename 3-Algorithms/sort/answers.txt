@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: Tested on 50000 lines, For the reversed data 5.898s; For random data 7.941s; For soretd data 0.402s | The worset scenario O(n^2) took longer than the best scenario Ω(n)
+
+sort2 uses: Merge Sort
+
+How do you know?: Tested on 50000 lines, For the reversed data 0.46s; For random data 0.43s; For soretd data 0.46s | The worset scenario O(n log n) took same time as the best scenario Ω(n log n), and also less than sort3
+
+sort3 uses: Selection Sort
+
+How do you know?: Tested on 50000 lines, For the reversed data 3.334s; For random data 3.362s; For soretd data 3.23s | The worset scenario O(n^2) took same time as the best scenario Ω(n^2), but also longer than sort2
