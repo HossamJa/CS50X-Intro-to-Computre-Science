@@ -1,9 +1,13 @@
-#include <cs50.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
 
+
 // Max number of candidates
 #define MAX 9
+
+// Defines 'string' as a data type
+typedef char *string;
 
 // Candidates have name and vote count
 typedef struct
@@ -19,10 +23,10 @@ candidate candidates[MAX];
 int candidate_count;
 
 // Function prototypes
-bool vote(string name);
+bool vote(char name[]);
 void print_winner(void);
 
-int main(int argc, string argv[])
+int main(int argc, char *argv[])
 {
     // Check for invalid usage
     if (argc < 2)
@@ -44,12 +48,16 @@ int main(int argc, string argv[])
         candidates[i].votes = 0;
     }
 
-    int voter_count = get_int("Number of voters: ");
+    int voter_count = 0;
+    printf("Number of voters: ");
+    scanf("%d", &voter_count);
 
     // Loop over all voters
     for (int i = 0; i < voter_count; i++)
     {
-        string name = get_string("Vote: ");
+        char name[50]= "";
+        printf("Vote: ");
+        scanf("%s", &name);
 
         // Check for invalid vote
         if (!vote(name))
@@ -63,15 +71,37 @@ int main(int argc, string argv[])
 }
 
 // Update vote totals given a new vote
-bool vote(string name)
+bool vote(char name[])
 {
-    // TODO
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (strcmp(candidates[i].name, name) == 0)
+        {
+            // Increment the votes of that candidate by one
+            candidates[i].votes++;
+            return true;
+        }
+    }
     return false;
 }
 
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
-    // TODO
+    int most_votes = 0;
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes > most_votes)
+        {
+            most_votes = candidates[i].votes;
+        }
+    }
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes == most_votes)
+        {
+            printf("%s\n", candidates[i].name);
+        }
+    }
     return;
 }
