@@ -115,7 +115,7 @@ This was **digital archaeology**.
 **Problem Set 4: Complete.**  
 **Memory: Mastered.**
 
-**Next stop:** Problem Set 5 — Python, DNA, and the power of scripting.
+**Next stop:** Problem Set 5 — Data Structures with C.
 
 The machine is no longer a mystery.  
 **It’s an extension of my mind.**
