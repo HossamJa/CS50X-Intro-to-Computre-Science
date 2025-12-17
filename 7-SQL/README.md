@@ -14,7 +14,7 @@ I completed every single challenge with full marks, turning raw data into meanin
 
 | Challenge       | Folder          | What I Built / What I Discovered |
 |-----------------|-----------------|----------------------------------|
-| **Songs**       | `songs/`        | Analyzed 15 real music questions using `ORDER BY`, `LIKE`, `IN`, `LIMIT` |
+| **Songs**       | `songs/`        | Analyzed 8 real music questions using `ORDER BY`, `LIKE`, `IN`, `LIMIT` |
 | **Movies**      | `movies/`       | Answered 13 Hollywood movie questions using joins, `DISTINCT`, `COUNT`, `BETWEEN`, subqueries |
 | **Fiftyville**  | `fiftyville/`   | Solved a full **crime mystery** — found the thief, accomplice, getaway city using only SQL clues |
 
@@ -26,10 +26,10 @@ I completed every single challenge with full marks, turning raw data into meanin
 Answer 8 real music questions about a 10,000-song database from Spotify.
 
 **What I did**  
-Wrote 15 separate queries using:
+Wrote 8 separate queries using:
 - `WHERE` with `LIKE '%love%'`
 - `ORDER BY` + `DESC`
-- `LIMIT 1`
+- `LIMIT 5`
 - `IN` with subqueries
 - `JOIN` on artists
 
