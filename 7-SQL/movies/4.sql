@@ -1,0 +1,1 @@
+SELECT count(*) FROM ratings where rating = 10.0;
