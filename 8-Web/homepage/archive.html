@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>The Archive | Mission Control</title>
+</head>
+<body class="bg-space text-terminal">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-success">
+        <div class="container">
+            <a class="navbar-brand mono" href="index.html"> > COMMAND_CENTER</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="journey.html">Journey</a>
+                <a class="nav-link active" href="archive.html">Archive</a>
+                <a class="nav-link" href="launchpad.html">Launchpad</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mono mb-4 text-uppercase">Certifications Archive</h1>
+        
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <input type="text" id="certSearch" class="form-control bg-dark text-success border-success" placeholder="Search by name or provider...">
+            </div>
+            <div class="col-md-6 mt-2 mt-md-0">
+                <button class="btn btn-outline-success filter-btn" onclick="filterCerts('all')">All</button>
+                <button class="btn btn-outline-success filter-btn" onclick="filterCerts('cloud')">Cloud</button>
+                <button class="btn btn-outline-success filter-btn" onclick="filterCerts('devops')">DevOps</button>
+                <button class="btn btn-outline-success filter-btn" onclick="filterCerts('marketing')">Marketing</button>
+            </div>
+        </div>
+
+        <div class="row" id="certGrid">
+            <div class="col-md-4 mb-4 cert-card" data-category="cloud">
+                <div class="card bg-dark border-secondary h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Google Cloud Architect</h5>
+                        <p class="card-text text-light small">Provider: Google Cloud | Issued 2025</p>
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/2Y4Q8JB6QT4L" class="btn btn-sm btn-outline-info">View Certificate</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="row" id="certGrid">
+            <div class="col-md-4 mb-4 cert-card" data-category="devops">
+                <div class="card bg-dark border-secondary h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">IBM DevOps and Software Engineering</h5>
+                        <p class="card-text text-light small">Provider: IBM | Issued 2025</p>
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/UPL5L3JFAZ4M" class="btn btn-sm btn-outline-info">View Certificate</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

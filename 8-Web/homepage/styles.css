@@ -1,0 +1,159 @@
+/* Home */
+
+/* Background effect */
+body.bg-space {
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    min-height: 100vh;
+}
+
+.shadow-glow {
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
+}
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    background-color: var(--terminal-green);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+#terminal-boot {
+    min-height: 200px;
+    font-size: 1.1rem;
+}
+
+/* Archive Style*/
+
+:root {
+    --space-black: #0b0d17;
+    --terminal-green: #00ff41;
+    --nebula-blue: #00d2ff;
+}
+
+body.bg-space {
+    background-color: var(--space-black);
+    color: var(--terminal-green);
+    font-family: 'Roboto Mono', monospace;
+}
+
+.mono {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Add a subtle glow to cards */
+.card {
+    transition: 0.3s;
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.card:hover {
+    box-shadow: 0 0 15px var(--terminal-green);
+    transform: translateY(-5px);
+}
+
+.text-terminal {
+    color: var(--terminal-green);
+}
+
+/* Custom scrollbar for a tech feel */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--terminal-green);
+}
+
+/* Lounchpad Style*/
+
+.project-blueprint {
+    border-width: 1px;
+    border-style: solid;
+    position: relative;
+    overflow: hidden;
+    background: rgba(0, 210, 255, 0.02) !important;
+}
+
+/* The "Corner Brackets" look common in Sci-fi UI */
+.card-title {
+    color: white;
+}
+.project-blueprint::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 10px; height: 10px;
+    border-top: 2px solid var(--nebula-blue);
+    border-left: 2px solid var(--nebula-blue);
+}
+
+.nav-pills .nav-link {
+    color: var(--terminal-green);
+    border: 1px solid transparent;
+    margin: 0 5px;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.nav-pills .nav-link.active {
+    background-color: transparent !important;
+    border: 1px solid var(--nebula-blue);
+    color: var(--nebula-blue) !important;
+    box-shadow: 0 0 10px var(--nebula-blue);
+}
+
+.badge {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+}
+
+/* Journey style*/
+.trajectory-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.trajectory-line {
+    position: absolute;
+    width: 4px;
+    background-color: #333;
+    top: 0; bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.milestone {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.milestone:hover {
+    transform: scale(1.05);
+}
+
+.milestone.left { left: 0; text-align: right; }
+.milestone.right { left: 50%; text-align: left; }
+
+.milestone-content {
+    padding: 20px;
+    background: rgba(0,0,0,0.6);
+    border: 1px solid;
+    border-radius: 8px;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 600px) {
+    .trajectory-line { left: 31px; }
+    .milestone { width: 100%; padding-left: 70px; padding-right: 25px; text-align: left !important; }
+    .milestone.right { left: 0%; }
+}

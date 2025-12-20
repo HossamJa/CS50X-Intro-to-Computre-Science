@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Journey | Flight Path</title>
+</head>
+<body class="bg-space text-terminal">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-warning">
+        <div class="container">
+            <a class="navbar-brand mono" href="index.html"> > MISSION_CONTROL</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link active" href="journey.html">Journey</a>
+                <a class="nav-link" href="archive.html">Archive</a>
+                <a class="nav-link" href="launchpad.html">Launchpad</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h1 class="display-4 mono">MISSION TRAJECTORY</h1>
+            <p class="text-warning">// Analyzing Flight History: From Physics to Engineering //</p>
+        </div>
+
+        <div class="trajectory-container">
+            <div class="trajectory-line"></div>
+
+            <div class="milestone left" onclick="showLog('physics')">
+                <div class="milestone-content border-warning">
+                    <h3>STAGE 01: THE CORE</h3>
+                    <p class="small mb-0">University: Physics & Chemistry</p>
+                    <span class="badge bg-warning text-dark">Analytical Foundation</span>
+                </div>
+            </div>
+
+            <div class="milestone right" onclick="showLog('marketing')">
+                <div class="milestone-content border-info">
+                    <h3>STAGE 02: MARKET ORBIT</h3>
+                    <p class="small mb-0">Digital Marketing, SEO & SaaS</p>
+                    <span class="badge bg-info text-dark">User-Centric Logic</span>
+                </div>
+            </div>
+
+            <div class="milestone left" onclick="showLog('it')">
+                <div class="milestone-content border-success">
+                    <h3>STAGE 03: GROUND OPS</h3>
+                    <p class="small mb-0">IT Support & Hardware Consulting</p>
+                    <span class="badge bg-success text-dark">Technical Troubleshooting</span>
+                </div>
+            </div>
+
+            <div class="milestone right" onclick="showLog('engineering')">
+                <div class="milestone-content border-primary">
+                    <h3>STAGE 04: ORBITAL ENTRY</h3>
+                    <p class="small mb-0">CS50, Cloud, DevOps & AI</p>
+                    <span class="badge bg-primary">Full-Stack Engineering</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="missionLog" class="mt-5 p-4 border border-secondary bg-dark shadow-lg d-none">
+            <h4 class="text-warning mono" id="logTitle">> MISSION_LOG_SELECTED</h4>
+            <p id="logText" class="text-light"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

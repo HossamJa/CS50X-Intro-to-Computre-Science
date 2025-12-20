@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+
+            document.addEventListener('click', function(event) {
+                if (event.target.classList.contains('answer-btn')) {
+                    const clickedButton = event.target;
+                    const isCorrect = clickedButton.dataset.correct === 'true';
+                    const feedbcakArea = clickedButton.closest('.questions').querySelector('.Feedback');
+
+                    if (isCorrect) {
+                        clickedButton.style.backgroundColor = 'green';
+                        feedbcakArea.innerHTML = "Correct!";
+                    }
+                    else {
+                        clickedButton.style.backgroundColor = 'red';
+                        feedbcakArea.innerHTML = 'Incorrect';
+                    }
+                }
+            });
+
+            function check(user_answer, feedback, correct)
+            {
+                let answer = document.getElementById(user_answer);
+
+                if (answer.value.trim().toLowerCase() === correct)
+                {
+                    document.getElementById(feedback).innerHTML = "Correct!";
+                    answer.style.color = "green";
+                }
+                else
+                {
+                    document.getElementById(feedback).innerHTML = "Incorrect";
+                    answer.style.color = "red";
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <div class="questions" id="qstn1">
+                    <h3>Which planet has the most moons?</h3>
+                    <p class="Feedback" id="feedback1"></p>
+                    <button class="answer-btn">Mars</button>
+                    <button class="answer-btn">Uranus</button>
+                    <button class="answer-btn" data-correct="true">Saturn</button>
+                    <button class="answer-btn">Venus</button>
+                    <button class="answer-btn">Jupiter</button>
+                    <button class="answer-btn">Pluto</button>
+                </div>
+
+                <div class="questions" id="qstn2">
+                    <h3>Which planet is closest to the sun?</h3>
+                    <p class="Feedback" id="feedback2"></p>
+                    <button class="answer-btn">Earth</button>
+                    <button class="answer-btn" data-correct="true">Mercury</button>
+                    <button class="answer-btn">Jupiter</button>
+                    <button class="answer-btn">Venus</button>
+                    <button class="answer-btn">Mars</button>
+                    <button class="answer-btn">Uranus</button>
+                </div>
+
+                <div class="questions" id="qstn3">
+                    <h3> What is the scientific theory that explains the origin of the universe?</h3>
+                    <p class="Feedback" id="feedback3"></p>
+                    <button class="answer-btn">Standard Cosmological Model</button>
+                    <button class="answer-btn">Cosmic Inflation Theory</button>
+                    <button class="answer-btn">Steady State Theory</button>
+                    <button class="answer-btn" data-correct="true">The Big Bang Theory</button>
+                    <button class="answer-btn">Oscillating Universe Theory</button>
+                    <button class="answer-btn">Ekpyrotic Universe Theory</button>
+                </div>
+
+                <div class="questions" id="qstn4">
+                    <h3>Which planet in the Milky Way is the hottest?</h3>
+                    <p class="Feedback" id="feedback4"></p>
+                    <button class="answer-btn">Jupiter</button>
+                    <button class="answer-btn">Uranus</button>
+                    <button class="answer-btn">Mars</button>
+                    <button class="answer-btn">Mercury</button>
+                    <button class="answer-btn" data-correct="true">Venus</button>
+                    <button class="answer-btn">Saturn</button>
+                </div>
+
+                <div class="questions" id="qstn5">
+                    <h3>What is the name of the world's first artificial satellite?</h3>
+                    <p class="Feedback" id="feedback5"></p>
+                    <button class="answer-btn">Hubble</button>
+                    <button class="answer-btn" data-correct="true">Sputnik-1</button>
+                    <button class="answer-btn">Starlink</button>
+                    <button class="answer-btn">Explorer-1</button>
+                    <button class="answer-btn">Kepler</button>
+                    <button class="answer-btn">Sentinel-2</button>
+                </div>
+
+                <div class="questions" id="qstn6">
+                    <h3>What scientific theory proposed that Earth revolves around the sun?</h3>
+                    <p class="Feedback" id="feedback6"></p>
+                    <button class="answer-btn">Sun-Centered</button>
+                    <button class="answer-btn">Geocentrism Model</button>
+                    <button class="answer-btn">Tychonic System</button>
+                    <button class="answer-btn">Ptolemaic Model</button>
+                    <button class="answer-btn" data-correct="true">Heliocentrism</button>
+                    <button class="answer-btn">Aristotelian physics</button>
+                </div>
+                <div class="questions" id="qstn7">
+                    <h3>What is the outermost layer of the Earth’s atmosphere called?</h3>
+                    <p class="Feedback" id="feedback7"></p>
+                    <button class="answer-btn" data-correct="true">Exosphere</button>
+                    <button class="answer-btn">Stratosphere</button>
+                    <button class="answer-btn">Ionosphere</button>
+                    <button class="answer-btn">Troposphere</button>
+                    <button class="answer-btn">Mesosphere</button>
+                    <button class="answer-btn">Mesosphere</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <div class="fr-questions" id="qstn8">
+                    <h3>What does CPU stand for?</h3>
+                    <p class="Feedback" id="feedback8"></p>
+                    <form onsubmit="check('answer8', 'feedback8', 'central processing unit'); return false;">
+                        <input autocomplete="off" id="answer8" type="text" placeholder="Write Your Answer Here">
+                        <input type="submit" value="Check Answer">
+                    </form>
+                </div>
+
+                <div class="fr-questions" id="qstn9">
+                    <h3>What does URL stand for?</h3>
+                    <p class="Feedback" id="feedback9"></p>
+                    <form onsubmit="check('answer9', 'feedback9', 'uniform resource locator'); return false;">
+                        <input autocomplete="off" id="answer9" type="text" placeholder="Write Your Answer Here">
+                        <input type="submit" value="Check Answer">
+                    </form>
+                </div>
+
+                <div class="fr-questions" id="qstn10">
+                    <h3>What is the term for harmful software such as viruses or ransomware?</h3>
+                    <p class="Feedback" id="feedback10"></p>
+                    <form onsubmit="check('answer10', 'feedback10', 'malware'); return false;">
+                        <input autocomplete="off" id="answer10" type="text" placeholder="Write Your Answer Here">
+                        <input type="submit" value="Check Answer">
+                    </form>
+                </div>
+
+                <div class="fr-questions" id="qstn11">
+                    <h3>What does USB stand for?</h3>
+                    <p class="Feedback" id="feedback11"></p>
+                    <form onsubmit="check('answer11', 'feedback11', 'universal serial bus'); return false;">
+                        <input autocomplete="off" id="answer11" type="text" placeholder="Write Your Answer Here">
+                        <input type="submit" value="Check Answer">
+                    </form>
+                </div>
+
+                <div class="fr-questions" id="qstn12">
+                    <h3>What does GIF stand for?</h3>
+                    <p class="Feedback" id="feedback12"></p>
+                    <form onsubmit="check('answer12', 'feedback12', 'graphics interchange format'); return false;">
+                        <input autocomplete="off" id="answer12" type="text" placeholder="Write Your Answer Here">
+                        <input type="submit" value="Check Answer">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>
