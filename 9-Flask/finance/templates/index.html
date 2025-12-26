@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <div class="mb-4 text-start">
+        <h1 class="display-5 fw-bold">Welcome back, <span class="blue">{{user_data.username}}</span>!</h1>
+        <p class="text-muted">Here is your portfolio overview.</p>
+    </div>
+
+    <div class="row mb-5 g-3">
+        <div class="col-md-4">
+            <div class="card dashboard-card shadow-sm border-0">
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-muted">Available Cash</h6>
+                    <h2 class="card-title mb-0 green">{{user_data.cash}}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card dashboard-card shadow-sm border-0">
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-muted">Stocks Value</h6>
+                    <h2 class="card-title mb-0 blue">{{user_data.total_shares_value}}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card dashboard-card shadow-sm border-0 bg-primary text-white">
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 opacity-75">Net Worth</h6>
+                    <h2 class="card-title mb-0 fw-bold">{{user_data.total}}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Stock Symbol</th>
+                    <th>Shares Held</th>
+                    <th>Current Price</th>
+                    <th>Total Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in records %}
+                    <tr>
+                        <td class="fw-bold">{{record.symbol}}</td>
+                        <td>{{record.shares}}</td>
+                        <td>{{record.share_price}}</td>
+                        <td>{{record.total_price}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" class="text-end">Portfolio Market Value:</td>
+                    <td class="fw-bold">{{user_data.total_shares_value}}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+{% endblock %}

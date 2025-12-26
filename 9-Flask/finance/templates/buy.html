@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy Stocks
+{% endblock %}
+
+{% block main %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            
+            <div class="mb-4">
+                <h1 class="display-6 fw-bold">Buy Shares</h1>
+                <p class="text-muted">Enter a ticker symbol and the quantity you wish to purchase.</p>
+                <div class="badge bg-light text-dark border p-2 px-3 rounded-pill">
+                    <span class="text-muted">Your Balance:</span> 
+                    <span class="fw-bold green ms-1">{{ cash_balance }}</span>
+                </div>
+            </div>
+
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                    <form action="/buy" method="post">
+                        
+                        <div class="mb-3 text-start">
+                            <label for="symbol" class="form-label small fw-bold text-uppercase">Stock Symbol</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-end-0 text-muted">
+                                    <span style="font-size: 0.9rem;">🔍</span>
+                                </span>
+                                {% if symbol %}
+                                    <input autocomplete="off" autofocus class="form-control border-start-0 ps-0" id="symbol" name="symbol" placeholder="e.g. AAPL" type="text" value={{symbol}} required>
+                                {% else %}
+                                    <input autocomplete="off" autofocus class="form-control border-start-0 ps-0" id="symbol" name="symbol" placeholder="e.g. AAPL" type="text" required>
+                                {% endif %}
+
+                                </div>
+                            <div class="form-text">Look up symbols like NFLX, GOOG, or TSLA.</div>
+                        </div>
+
+                        <div class="mb-4 text-start">
+                            <label for="shares" class="form-label small fw-bold text-uppercase">Number of Shares</label>
+                            <input class="form-control" id="shares" name="shares" placeholder="0" type="number" min="1" required>
+                        </div>
+
+                        <div class="d-grid">
+                            <button class="btn btn-success btn-lg shadow-sm fw-bold" type="submit">
+                                Purchase Shares
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <a href="/" class="text-decoration-none text-muted small">← Back to Portfolio</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

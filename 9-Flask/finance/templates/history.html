@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="text-start">
+            <h1 class="display-6 fw-bold">Transaction History</h1>
+            <p class="text-muted mb-0">A chronological record of all your account activity.</p>
+        </div>
+        <div class="d-none d-md-block">
+            <span style="font-size: 2.5rem;">📜</span>
+        </div>
+    </div>
+
+    <div class="card shadow-sm border-0 overflow-hidden">
+        <div class="table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th class="ps-4">Date & Time</th>
+                        <th>Action</th>
+                        <th>Stock</th>
+                        <th class="text-center">Shares</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-end pe-4">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for record in records %}
+                        <tr>
+                            <td class="ps-4">
+                                <span class="text-muted small d-block">{{ record.datetime }}</span>
+                            </td>
+                            <td>
+                                {% if record.action.lower() == 'buy' %}
+                                    <span class="badge badge-buy">BUY</span>
+                                {% elif record.action.lower() == 'sell' %}
+                                    <span class="badge badge-sell">SELL</span>
+                                {% else %}
+                                    <span class="badge badge-deposit">DEPOSIT</span>
+                                {% endif %}
+                            </td>
+                            <td><span class="fw-bold">{{ record.symbol }}</span></td>
+                            <td class="text-center">{{ record.shares }}</td>
+                            <td class="text-center text-muted">{{ record.share_price }}</td>
+                            <td class="text-end pe-4 fw-bold">
+                                {{ record.total_price }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="mt-4 text-start">
+        <a href="/" class="btn btn-outline-secondary btn-sm">
+            ← Return to Dashboard
+        </a>
+    </div>
+</div>
+{% endblock %}

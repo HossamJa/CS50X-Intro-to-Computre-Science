@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell Stocks
+{% endblock %}
+
+{% block main %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            
+            <div class="mb-4">
+                <h1 class="display-6 fw-bold">Sell Shares</h1>
+                <p class="text-muted">Liquidate your positions to increase your cash balance.</p>
+            </div>
+
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                    <form action="/sell" method="POST">
+                        
+                        <div class="mb-3 text-start">
+                            <label for="symbol" class="form-label small fw-bold text-uppercase">Select Asset</label>
+                            <select class="form-select form-select-lg" id="symbol" name="symbol" required>
+                                <option value="" disabled selected>Choose a stock to sell...</option>
+                                {% for stock in stocks %}
+                                    <option value="{{stock}}">{{stock}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="mb-4 text-start">
+                            <label for="shares" class="form-label small fw-bold text-uppercase">Number of Shares</label>
+                            <input class="form-control form-control-lg" id="shares" name="shares" placeholder="0" type="number" min="1" required>
+                            <div class="form-text mt-2 text-danger-emphasis bg-danger-subtle p-2 rounded small">
+                                ⚠️ Note: You cannot sell more shares than you currently own.
+                            </div>
+                        </div>
+
+                        <div class="d-grid">
+                            <button class="btn btn-danger btn-lg shadow-sm fw-bold" type="submit">
+                                Sell Position
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <a href="/" class="text-decoration-none text-muted small">← Return to Portfolio</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

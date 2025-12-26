@@ -1,0 +1,192 @@
+/* =========================================
+   1. BRANDING & GLOBAL STYLES
+   ========================================= */
+body {
+    background-color: rgb(228, 227, 227);
+}
+
+/* Brand Text Colors */
+.blue   { color: #537fbe !important; }
+.red    { color: #ea433b !important; }
+.yellow { color: #f5b82e !important; }
+.green, .text-success { color: #2e944b !important; }
+
+/* Navbar Brand */
+nav .navbar-brand {
+    font-size: xx-large;
+}
+
+.navbar-brand:hover, .text-center h1:hover {
+    filter: brightness(1.1);
+    transition: 0.3s;
+}
+
+/* =========================================
+   2. TABLES (Summary & History)
+   ========================================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 1rem 0.75rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Generic Header Style */
+thead th {
+    background-color: #007bff;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* History-specific Table Overrides (Lighter Header) */
+.table-responsive .table thead th {
+    background-color: #f8f9fa;
+    color: #495057;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #dee2e6;
+}
+
+/* Numerical Alignment */
+tbody td:nth-child(2), 
+tbody td:nth-child(3), 
+tbody td:nth-child(4), 
+tfoot td:nth-child(2) {
+    text-align: center;
+}
+
+/* Row Effects */
+tbody tr:nth-of-type(odd) { background-color: #f9f9f9; }
+tbody tr:hover { background-color: #e9ecef; cursor: pointer; }
+
+/* Table Footer (Total Row) */
+tfoot td {
+    background-color: #e9ecef;
+    font-weight: bold;
+    border-top: 2px solid #007bff;
+    color: #333;
+}
+tfoot td:first-child { text-align: right; }
+
+/* =========================================
+   3. CARDS & DASHBOARD
+   ========================================= */
+.card {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.card.shadow {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 12px; /* Standardized radius */
+}
+
+.dashboard-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 12px;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.bg-primary {
+    background-color: #537fbe !important;
+}
+
+/* =========================================
+   4. FORMS & INPUTS
+   ========================================= */
+.form-control, .form-select {
+    padding: 0.75rem 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+/* Fixed the box-shadow syntax error here */
+.form-control:focus, .form-select:focus {
+    border-color: #537fbe;
+    box-shadow: 0 0 0 0.25rem rgba(83, 127, 190, 0.15);
+    transform: translateY(-1px);
+    outline: none;
+}
+
+/* Large Input Groups (Add Cash / Buy) */
+.input-group-lg .input-group-text {
+    font-size: 1.5rem;
+    padding-left: 1.25rem;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.input-group-lg .form-control {
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.form-text {
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+    color: #adb5bd;
+}
+
+/* =========================================
+   5. BUTTONS & BADGES
+   ========================================= */
+/* Primary (Blue) */
+.btn-primary {
+    background-color: #537fbe;
+    border: none;
+    font-weight: 600;
+    padding: 0.8rem;
+    border-radius: 8px;
+}
+.btn-primary:hover { background-color: #3e6091; }
+
+/* Success (Green/Buy) */
+.btn-success {
+    background-color: #2e944b;
+    border: none;
+    transition: all 0.2s ease;
+}
+.btn-success:hover { background-color: #257a3e; transform: scale(1.02); }
+
+/* Danger (Red/Sell) */
+.btn-danger {
+    background-color: #ea433b;
+    border: none;
+    transition: all 0.2s ease;
+}
+.btn-danger:hover { background-color: #c9302c; transform: translateY(-1px); }
+
+/* Badges (History) */
+.badge {
+    padding: 0.5em 0.8em;
+    font-weight: 600;
+    border-radius: 6px;
+}
+.badge-buy     { background-color: #d1e7dd; color: #0f5132; }
+.badge-sell    { background-color: #f8d7da; color: #842029; }
+.badge-deposit { background-color: #cfe2ff; color: #084298; }
+
+/* =========================================
+   6. ANIMATIONS
+   ========================================= */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
